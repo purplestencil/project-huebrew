@@ -1,9 +1,15 @@
+
+Project Huebrew is my final project for my degree in computer science.
+
+I am teaching myself JSON, JavaScript, HTML, CSS and how to work with an API as part of this project. 
+The end goal is to create a basic web application to control Phillips hue lights.
+
 <body>
 <div class="container">
 	
 	<h2>Overview</h2>
 	<h3>Description</h3>
-	<p>This project is being developed as a final project for COS-796, toward the completion of a master’s degree in Computer Science. The aim of this project is to demonstrate skills that have been learned over the course of this degree as well as to demonstrate
+	<p>This project is being developed as a final project for COS-796, toward the completion of my degree in computer science. The aim of this project is to demonstrate skills that have been learned over the course of this degree as well as to demonstrate
 		a capacity for independent learning and technologies not covered in the course curriculum. I will be teaching myself JSON and JavaScript, and using the publicly available Phillips hue API to create a web application that can perform a basic light control
 		function for a Phillips hue light. I will also be using tools and techniques that have been taught in Software Engineering (source control) and Management Information Technology (project management) to work on and manage this project.
 	</p>
