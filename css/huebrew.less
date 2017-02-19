@@ -1,0 +1,112 @@
+//navbar variables setup
+@bgnav: black;
+@txtnav: lightgray;
+@bgnavactive: white;
+@txtnavactive: black;
+@bgnavhover: fadeout(@bgnavactive, 90%);
+@txtnavhover: @bgnavactive;
+@bgnavmenu: @bgnavactive;
+@txtnavmenu: @txtnavactive;
+@navoffset: 10%;
+@navbox: inset 0px 4px 0px @bgnavactive;
+
+//body variables setup
+@bgbody: black;
+@txtbody: red;
+@spaceabove: 2%;
+@spacebelow: 2%;
+@height: 100%;
+@padtop: 56px;
+
+@rainbow: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+
+//body padding to offset navbar overlay
+html, body {
+  color: @txtbody;
+  height: @height;
+  background: @rainbow;
+}
+
+.navheader,
+.navfooter {
+  background: @bgnav !important;
+  padding-left: @navoffset;
+  padding-right: @navoffset;
+}
+
+//custom navbar header only containersettings
+#pagehead {
+}
+
+//navbar text and background color settings
+.navbar-inverse .navbar-brand, 
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse {
+  color: @txtnav;
+  background-color: @bgnav;
+}
+
+//set color for highlighted menu option
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: @txtnavhover;
+  background-color: @bgnavhover;
+  box-shadow: @navbox;
+}
+
+//set color for selected/active tab or dropdown link
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+  color: @txtnavactive;
+  background-color: @bgnavactive;
+  //box-shadow: @navbox;
+}
+
+//navbar dropdown menu text and background color settings
+.dropdown-menu, .dropdown-menu>li>a{
+  color: @txtnavmenu;
+  background-color: @bgnavmenu;
+}
+
+//offset navbar bottom margin
+.navbar-bottom {
+  height: @padtop;
+  background: @rainbow;
+}
+
+//container edge setup
+.container-edge {
+  background-image: @rainbow;
+  padding: 1px 0px 1px 0px;
+}
+
+//in html, add "rainbow-edge" to a div class that holds all other containers
+//to add a rainbow padding to each child div
+.container-edge > div {}
+
+//fill container for bottom of page
+.bottom-fill {
+  width: @height;
+  height: @height;
+  min-height: @height;
+  background: @rainbow;
+}
+
+//container formatting for hue controls
+.hue-container {
+  background: @bgbody;
+  padding-top: @spaceabove;
+  padding-bottom: @spacebelow;
+  height: @height;
+  text-align: center;
+}
+
+//custom footer only container settings
+#pagefoot {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+}

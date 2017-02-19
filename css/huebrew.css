@@ -1,1 +1,63 @@
-<link rel="stylesheet" href="http://tawian.io/text-spinners/spinners.css">
+html,
+body {
+  color: red;
+  height: 100%;
+  background: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+}
+.navheader,
+.navfooter {
+  background: black !important;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse {
+  color: lightgray;
+  background-color: black;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0px 4px 0px white;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: black;
+  background-color: white;
+}
+.dropdown-menu,
+.dropdown-menu > li > a {
+  color: black;
+  background-color: white;
+}
+.navbar-bottom {
+  height: 56px;
+  background: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+}
+.container-edge {
+  background-image: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+  padding: 1px 0px 1px 0px;
+}
+.bottom-fill {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+}
+.hue-container {
+  background: black;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: 100%;
+  text-align: center;
+}
+#pagefoot {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+}
