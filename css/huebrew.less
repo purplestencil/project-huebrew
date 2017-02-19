@@ -17,14 +17,18 @@
 @spacebelow: 2%;
 @height: 100%;
 @padtop: 56px;
+@navbottom: @rainbow;
+@containeredge: @monobow;
+@bottomfill: @bgbody;
 
-@rainbow: -webkit-linear-gradient(left, red 5%, orange, yellow, green, darkgreen, teal, navy, indigo, purple 98%);
+@rainbow: -webkit-linear-gradient(right, red 10%, gold, yellow, green, teal, navy, purple 90%);
+@monobow: -webkit-linear-gradient(left, grey, white 10%, grey, white, grey, white 90%, grey);
 
 //body padding to offset navbar overlay
 html, body {
   color: @txtbody;
   height: @height;
-  background: @rainbow;
+  background-color: @bgbody;  
 }
 
 .navheader,
@@ -37,6 +41,16 @@ html, body {
 //custom navbar header only containersettings
 #pagehead {
 }
+
+/* TO CENTER ALIGN MENU WITHOUT BRAND
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}*/
 
 //navbar text and background color settings
 .navbar-inverse .navbar-brand, 
@@ -74,13 +88,13 @@ html, body {
 //offset navbar bottom margin
 .navbar-bottom {
   height: @padtop;
-  background: @rainbow;
+  background: @navbottom;
 }
 
 //container edge setup
 .container-edge {
-  background-image: @rainbow;
-  padding: 1px 0px 1px 0px;
+  background-image: @containeredge;
+  padding: 0px 0px 2px 0px;
 }
 
 //in html, add "rainbow-edge" to a div class that holds all other containers
@@ -92,7 +106,7 @@ html, body {
   width: @height;
   height: @height;
   min-height: @height;
-  background: @rainbow;
+  background: @bottomfill;
 }
 
 //container formatting for hue controls
