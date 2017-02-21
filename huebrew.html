@@ -36,9 +36,8 @@
 <body>
 <!-- navigation header -->
 <header>
-  <a id="top" name="home"></a>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid navheader" id="pagehead">
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="navBar">
+    <div class="container-fluid nav-head" id="pageHead">
       <!-- brand and toggle grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -54,7 +53,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
         <ul class="nav navbar-nav navbar-right" id="navbarAlign">
-          <li><a href="#connect"><span class="glyphicon glyphicon-cog"></span> Connect<span class="sr-only">(current)</span></a></li>
+          <li><a href="#top"><span class="glyphicon glyphicon-cog"></span> Connect<span class="sr-only">(current)</span></a></li>
           <li><a href="#control"><span class="glyphicon glyphicon-adjust"></span> Control</a></li>
           <li class="dropdown">
             <a href="#help" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-question-sign"></span> Help<span class="caret"></span></a>
@@ -77,67 +76,75 @@
       <!-- end navbar-collapse -->
     </div>
     <!-- end container-fluid -->
+    <!-- set up offset margin for navbar -->
+    <div class="nav-border">
+    </div>
+    <!-- end navbar margin -->
   </nav>
 </header>
+<a id="top" name="home"></a>
 <!-- end havigation header -->
 
-<!-- set up offset margin for navbar -->
-<div class="navbar-bottom">
-</div>
-<!-- end navbar margin -->
 
 <!-- start connect section -->
-  <section class="container-edge" id="connect">
-    <div class="container-fluid hue-container">
-      <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5 col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-xs-offset-3">
-          <form>
-        <div class="form-group">
-          <p>Enter the IP address for your hue bridge: </p><input type="text" class="form-control" placeholder="Enter IP address">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-        </div>
+<section class="container-edge" id="connect">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <p class="form-text">Enter the IP address for your hue bridge: </p>
       </div>
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter IP address" id="ipAddress">
+          </div>
+          <button type="submit" class="btn btn-default" onclick="brew.connectToIP()">Connect</button>
+        </form>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><p>Status: <span id="status">Not Connected</span></p></div>
     </div>
-  </section>
+  </div>
+</section>
 <!-- end connect section -->
 
 <!-- start control section -->
-  <section class="container-edge" id="control">
-    <div class="container-fluid hue-container">
-      <div class="row">
-        <div class="col-md-12">
-          <p>placeholder for light selector field</p>
-        </div>
+<section class="container-edge" id="control">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>placeholder for light selector field</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <!-- end control section -->
 
 <!-- start about section -->
-  <section class="container-edge" id="about">
-    <div class="container-fluid hue-container">
-      <div class="row">
-        <div class="col-md-12">
-          <p>placeholder for information about the project</p>
-        </div>
+<section class="container-edge fill" id="about">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>placeholder for information about the project</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <!-- end about section -->
 
 <!-- bottom fill -->
-<div class="bottom-fill"></div>
+<!--<div class="bottom-fill"></div>-->
 
 <!-- start footer -->
 <footer>
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
-    <div class="container-fluid navfooter" id="pagefoot">
+    <!-- set up offset margin for navbar -->
+    <div class="nav-border">
+    </div>
+    <!-- end navbar margin -->
+    <div class="container-fluid nav-foot" id="pageFoot">
       <p>&copy; 2017 Richa Mehta</p>
     </div>
   </nav>
-  <p></p>
 </footer>
 <!-- end footer-->
 </body>
