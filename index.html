@@ -1,120 +1,148 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en-us">
 
 <head>
-	<title>Project Huebrew Documentation</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>Huebrew</title>
+
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- Huebrew stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+	<!--Latest compiled and minified JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	<!--Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!-- Huebrew JS script -->
+	<script type="text/javascript" src="scripts/brew-nav.js"></script>
+    <script type="text/javascript" src="scripts/brew-connect.js"></script>
+
+	
+	<style>
+	
+	</style>
+
 </head>
 
-
 <body>
-<div class="container">
-	<h1>Project Documentation</h1>
-	<h2>Overview</h2>
-	<h3>Description</h3>
-	<p>This project is being developed as a final project for COS-796, toward the completion of a master’s degree in Computer Science. The aim of this project is to demonstrate skills that have been learned over the course of this degree as well as to demonstrate
-		a capacity for independent learning and technologies not covered in the course curriculum. I will be teaching myself JSON and JavaScript, and using the publicly available Phillips hue API to create a web application that can perform a basic light control
-		function for a Phillips hue light. I will also be using tools and techniques that have been taught in Software Engineering (source control) and Management Information Technology (project management) to work on and manage this project.
-	</p>
-	<h3>Project Goals</h3>
-	<p>This project will allow me to learn and demonstrate the following skills:</p>
-	<ul>
-		<li>Write the project scope (requirements document) before the start of project work</li>
-		<li>Use Git for source control and repo management</li>
-		<li>Learn JSON syntax and data types</li>
-		<li>Learn to write JSON data (simple and complex) on my own</li>
-		<li>Learn how to use JSON with JavaScript and HTML</li>
-		<li>Learn to collect the required piece of information even from complex JSON data</li>
-		<li>Learn how to contact an API and collect JSON response</li>
-		<li>Develop a basic web application making use of a publicly available API (Phillips hue API)</li>
-	</ul>
-	<h3>High-Level Requirements</h3> 
-	<p>This application will provide a web interface to perform the basic light control functions that are currently available in the native Phillips mobile apps. </p>
-	<p>The application will use HTML, CSS and JavaScript to create the web UI. The application will provide the following hue controls:</p>
-	<ul>
-		<li>Connect to a Phillips hue bridge</li>
-		<li>Add a hue light to the application</li>
-		<li>Turn a light on and off</li>
-	</ul>
-	<h3>Deliverables</h3>
-	<ul>
-		<li>Web application</li>
-		<li>Source code</li>
-		<li>Project documentation</li>
-	</ul>
-	<h3>Tools Used</h3>
-	<ul>
-		<li>Git (source code is hosted on <a href="https://github.com/purplestencil/project-huebrew">GitHub</a>)
-		</li>
-		<li>Notepad++
-		</li>
-		<li><a href="https://developers.meethue.com/philips-hue-api">Phillips hue API</a>
-		</li>
-		<li><a href="http://steveyo.github.io/Hue-Emulator/">Phillips hue emulator</a>
-		</li>
-		<li>Phillips hue system (light and wireless bridge)
-		</li>
-	</ul>
-	<h3>Implementation Plan</h3>
-	<table class="table">
-		<tr>
-			<th>Phase</th>
-			<th>Items</th>
-		</tr>
-		<tr>
-			<td>Phase 1</td>
-			<td>
-				<ul>
-					<li>Create HTML page for user to connect to a Hue bridge.</li>
-					<li>Allow connections to a bridge.</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Phase 2</td>
-			<td>
-				<ul>
-					<li>Discover lights on the network.</li>
-					<li>Connect to a light from the webpage.</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Phase 3</td>
-			<td>
-				<ul>
-					<li>Use the webpage control to toggle the light status.</li>
-					<li>Improve user experience.</li>
-				</ul>
-			</td>
-		</tr>
-	</table>
-	<h2>Document Revision History</h2>
-	<table class="table">
-		<tr>
-			<th>Version</th>
-			<th>Date</th>
-			<th>Revision notes</th>
-		</tr>
-		<tr>
-			<td>0.1</td>
-			<td>January 8, 2017</td>
-			<td>Created initial draft.</td>
-		</tr>
-		<tr>
-			<td>0.2</td>
-			<td>January 19, 2017</td>
-			<td>Trimmed scope. PHP is no longer included in the learning scope. App must perform basic light control functions.</td>
-		</tr>
-		<tr>
-			<td>0.3</td>
-			<td>January 28, 2017</td>
-			<td>Added project documentation page on GitHub Pages.</td>
-		</tr>
-	</table>
-</div>
+<!-- navigation header -->
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="navBar">
+    <div class="container-fluid nav-head" id="pageHead">
+      <!-- brand and toggle grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#top">Project Huebrew</a>
+      </div>
+
+      <!-- collect nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right" id="navbarAlign">
+          <li><a href="#top"><span class="glyphicon glyphicon-cog"></span> Connect<span class="sr-only">(current)</span></a></li>
+          <li><a href="#control"><span class="glyphicon glyphicon-adjust"></span> Control</a></li>
+          <li class="dropdown">
+            <a href="#help" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-question-sign"></span> Help<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#howto">How to...</a></li>
+              <li><a href="#doc">Documentation</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#about2">About Project Huebrew</a></li>
+            </ul>
+          </li>
+          <!-- BEGIN SEARCH FIELD <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> END SEARCH FIELD -->
+          <li><a href="#about"><span class="glyphicon glyphicon-user"></span> About</a></li>
+        </ul>
+      </div>
+      <!-- end navbar-collapse -->
+    </div>
+    <!-- end container-fluid -->
+    <!-- set up offset margin for navbar -->
+    <div class="nav-border">
+    </div>
+    <!-- end navbar margin -->
+  </nav>
+</header>
+<a id="top" name="home"></a>
+<!-- end havigation header -->
+
+
+<!-- start connect section -->
+<section class="container-edge" id="connect">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <p class="form-text">Enter the IP address for your hue bridge: </p>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter IP address" id="ipAddress">
+          </div>
+          <button type="submit" class="btn btn-default" onclick="brew.connectToIP()">Connect</button>
+        </form>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><p>Status: <span id="status">Not Connected</span></p></div>
+    </div>
+  </div>
+</section>
+<!-- end connect section -->
+
+<!-- start control section -->
+<section class="container-edge" id="control">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>placeholder for light selector field</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end control section -->
+
+<!-- start about section -->
+<section class="container-edge fill" id="about">
+  <div class="container-fluid hue-container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>placeholder for information about the project</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end about section -->
+
+<!-- bottom fill -->
+<!--<div class="bottom-fill"></div>-->
+
+<!-- start footer -->
+<footer>
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <!-- set up offset margin for navbar -->
+    <div class="nav-border">
+    </div>
+    <!-- end navbar margin -->
+    <div class="container-fluid nav-foot" id="pageFoot">
+      <p>&copy; 2017 Richa Mehta</p>
+    </div>
+  </nav>
+</footer>
+<!-- end footer-->
 </body>
-</html>

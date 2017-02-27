@@ -1,33 +1,6 @@
-/*JavaScript code for Project Huebrew
+/*JavaScript code for Project Huebrew bridge connections
   Author: Richa Mehta
 */
-
-//navigation active selector
-var selector, elems, makeActive;
-selector = ".nav li";
-elems = document.querySelectorAll(selector);
-makeActive = function () {
-    for (var i = 0; i < elems.length; i++) {
-        elems[i].classList.remove("active");
-    }
-    this.classList.add("active");
-};
-for (var i = 0; i < elems.length; i++) {
-    elems[i].addEventListener("mousedown", makeActive);
-}
-
-
-//to adjust top offset for fixed navbar when jumping to anchor
-var scrollToAnchor, headerOffset;
-headerOffset = 56;
-scrollToAnchor = function() { 
-  scrollBy(0, -headerOffset) 
-};
-if (location.hash) {
-  scrollToAnchor();
-}
-window.addEventListener("hashchange", scrollToAnchor);
-
 
 //huebrew object
 var brew = {
