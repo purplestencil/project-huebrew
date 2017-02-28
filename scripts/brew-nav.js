@@ -1,6 +1,5 @@
-/*JavaScript code for Project Huebrew navigation bar
-  Author: Richa Mehta
-*/
+/*jslint browser: true*/
+/*global $, jQuery , console, scrollBy*/
 
 //define variables
 var selector, elems, makeActive, scrollToAnchor, headerOffset;
@@ -10,12 +9,14 @@ selector = ".nav li";
 elems = document.querySelectorAll(selector);
 makeActive = function () {
     "use strict";
-    for (var i = 0; i < elems.length; i++) {
+    var i;
+    for (i = 0; i < elems.length; i += 1) {
         elems[i].classList.remove("active");
     }
     this.classList.add("active");
 };
-for (var j = 0; j < elems.length; j++) {
+var i;
+for (i = 0; i < elems.length; i += 1) {
     elems[i].addEventListener("mousedown", makeActive);
 }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Roboto|Roboto+Mono');
+
 //navbar variables setup
 @bgnav: black;
 @txtnav: lightgray;
@@ -7,50 +9,35 @@
 @txtnavhover: @bgnavactive;
 @bgnavmenu: @bgnavactive;
 @txtnavmenu: @txtnavactive;
-@navoffset: 10%;
 @navbox: inset 0px 4px 0px @bgnavactive;
+@navborder: 6px;
 
 //body variables setup
-@bgbody: black;
+@bgbody: @monobow;
+@bgcontainer: #181818;
 @txtbody: red;
+@txtcontainer: red;
+@padtop: 28px;
+@padbottom: 28px;
 @spaceabove: 2%;
 @spacebelow: 2%;
-@height: 100%;
-@padtop: 56px;
-@navbottom: @rainbow;
+@offset: 10%;
+@huebrew: @rainbow;
 @containeredge: @monobow;
-@bottomfill: @bgbody;
+@fill: @bgbody;
 
 @rainbow: -webkit-linear-gradient(right, red 10%, gold, yellow, green, teal, navy, purple 90%);
 @monobow: -webkit-linear-gradient(left, grey, white 10%, grey, white, grey, white 90%, grey);
+@containerfill: -webkit-linear-gradient(top, black 10%, #181818, #181818, black 90%);
 
 //body padding to offset navbar overlay
 html, body {
   color: @txtbody;
-  height: @height;
+  height: 100%;
   background-color: @bgbody;  
+  padding-top: @padtop;
+  padding-bottom: @padbottom;
 }
-
-.navheader,
-.navfooter {
-  background: @bgnav !important;
-  padding-left: @navoffset;
-  padding-right: @navoffset;
-}
-
-//custom navbar header only containersettings
-#pagehead {
-}
-
-/* TO CENTER ALIGN MENU WITHOUT BRAND
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}*/
 
 //navbar text and background color settings
 .navbar-inverse .navbar-brand, 
@@ -85,10 +72,32 @@ html, body {
   background-color: @bgnavmenu;
 }
 
+//navbar header and footer offsets and background color
+.nav-head,
+.nav-foot {
+  background: @bgnav !important;
+  padding-left: @offset;
+  padding-right: @offset;
+}
+
+//custom navbar header only containersettings
+#pageHead {
+}
+
+/* TO CENTER ALIGN MENU WITHOUT BRAND
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}*/
+
 //offset navbar bottom margin
-.navbar-bottom {
-  height: @padtop;
-  background: @navbottom;
+.nav-border {
+  height: @navborder;
+  background: @huebrew;
 }
 
 //container edge setup
@@ -102,25 +111,32 @@ html, body {
 .container-edge > div {}
 
 //fill container for bottom of page
-.bottom-fill {
-  width: @height;
-  height: @height;
-  min-height: @height;
-  background: @bottomfill;
+.fill {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: @fill;
 }
 
 //container formatting for hue controls
 .hue-container {
-  background: @bgbody;
+  background: @bgcontainer;
+  color: @txtcontainer;
   padding-top: @spaceabove;
   padding-bottom: @spacebelow;
-  height: @height;
-  text-align: center;
+  padding-left: @offset;
+  padding-right: @offset;
+  height: 100%;
+  text-align: none;
 }
 
 //custom footer only container settings
-#pagefoot {
+#pageFoot {
   padding-top: 15px;
   padding-bottom: 5px;
   text-align: center;
+}
+
+.form-text {
+  color: white;
 }
