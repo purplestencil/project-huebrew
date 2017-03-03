@@ -4,14 +4,14 @@
 //huebrew object
 var brew = {
     //new user created on connect
-    user: "brewUser",
+    user: "",
 
     //whitelisted users
     testUser: "newdeveloper",
     brUser: "ZKAiaxu0o8aTvLGl3SNUJPv4jZcGVgjcIn-9v-ul",
 
     //device name
-    device: "huebrew#richa",
+    device: "huebrew#test",
 
     //bridge IP address on start
     bridgeIP: null
@@ -26,7 +26,8 @@ brew.getHueBridgeIpAddress = function () {
 //create new user on bridge
 brew.createUser = function (userName, successCheck, failCheck) {
     "use strict";
-    var data = {
+    //message body for POST request
+    var messageBody = {
         "username": userName,
         "devicetype": brew.device
     };
@@ -36,7 +37,7 @@ brew.createUser = function (userName, successCheck, failCheck) {
         dataType: "json",
         timeout: 3000,
         url: "http://" + brew.getHueBridgeIpAddress() + "/api/",
-        data: JSON.stringify(data),
+        data: JSON.stringify(messageBody),
         success: function (data) {
             successCheck(data);
         },
@@ -44,31 +45,34 @@ brew.createUser = function (userName, successCheck, failCheck) {
             failCheck(err);
         }
     });
-    console.log(data);
+    console.log("The following information was passed to the bridge:" + JSON.stringify(messageBody));
 };
 
 //connect to bridge
 brew.bridgeConnect = function () {
     "use strict";
     console.log("Establishing connection...");
-    $("#status").html("Establishing connection...");
+    $("#status").text("Establishing connection...");
     brew.createUser(
         brew.user,
-        function (json) {
-            console.log(json[0]);
-            if (json[0].error) {
-                $("#status").html(json[0].error.description);
-            } else if (json[0].success) {
-                $("#status").html("Connected");
-                console.log("Connected with new username:", brew.user);
+        //successCheck function
+        function (response) {
+            console.log(response[0]);
+            if (response[0].error) {
+                $("#status").text(response[0].error.description);
+                console.log("Could not establish a connection. \nError " + response[0].error.type + ": " + response[0].error.description);
+            } else if (response[0].success) {
+                $("#status").text("Successfully connected to the bridge!");
+                console.log("Success: Connected to the bridge. \nNew username:", response[0].success.username);
             } else {
-                $("#status").html("Oh no! Something went wrong.");
-                console.log("Connection attempt failed. Check your code.");
+                $("#status").text("Oh no! Something went wrong.");
+                console.log("Undefined error: Connection attempt failed. Check your code.");
             }
         },
+        //failCheck function
         function () {
-            $("#status").html("Could not locate your Hue Bridge.");
-            console.log("Could not locate the bridge.");
+            $("#status").text("Error: Could not locate your Hue Bridge.");
+            console.log("Could not locate the bridge. Check the IP address you entered.");
         }
     );
 };
