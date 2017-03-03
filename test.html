@@ -19,10 +19,7 @@
 	
 	<!--Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-	<!-- Huebrew JS script -->
-	<script type="text/javascript" src="scripts/brew-nav.js"></script>
-    <script type="text/javascript" src="scripts/brew-connect.js"></script>
+
 
 	
 	<style>
@@ -96,7 +93,7 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter IP address" id="ipAddress">
           </div>
-          <button type="submit" class="btn btn-default" onclick="brew.connectToIP()">Connect</button>
+          <button type="submit" class="btn btn-default" id="connectBridge">Connect</button>
         </form>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><p>Status: <span id="status">Not Connected</span></p></div>
@@ -145,4 +142,9 @@
   </nav>
 </footer>
 <!-- end footer-->
+    
+    	
+	<!-- Huebrew JS script -->
+	<script type="text/javascript" src="scripts/brew-nav.js"></script>
+    <script type="text/javascript" src="scripts/brew-connect.js"></script>
 </body>
