@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $, jQuery , console*/
+/*global $, jQuery, console, alert*/
 
 //huebrew object
 var brew = {
@@ -61,18 +61,22 @@ brew.bridgeConnect = function () {
             if (response[0].error) {
                 $("#status").text(response[0].error.description);
                 console.log("Could not establish a connection. \nError " + response[0].error.type + ": " + response[0].error.description);
+                alert("Could not establish a connection. \nError " + response[0].error.type + ": " + response[0].error.description);
             } else if (response[0].success) {
                 $("#status").text("Successfully connected to the bridge!");
                 console.log("Success: Connected to the bridge. \nNew username:", response[0].success.username);
+                alert("Success: Connected to the bridge. \nNew username:", response[0].success.username);
             } else {
                 $("#status").text("Oh no! Something went wrong.");
                 console.log("Undefined error: Connection attempt failed. Check your code.");
+                alert("Undefined error: Connection attempt failed. Check your code.");
             }
         },
         //failCheck function
         function () {
             $("#status").text("Error: Could not locate your Hue Bridge.");
             console.log("Could not locate the bridge. Check the IP address you entered.");
+            alert("Could not locate the bridge. Check the IP address you entered.");
         }
     );
 };
