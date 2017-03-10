@@ -32,6 +32,7 @@ brew.createUser = function (userName, successCheck, failCheck) {
         "devicetype": brew.device
     };
 
+    //http call
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -55,7 +56,7 @@ brew.bridgeConnect = function () {
     $("#status").text("Establishing connection...");
     brew.createUser(
         brew.user,
-        //successCheck function
+        //check the response from the bridge
         function (response) {
             console.log(response[0]);
             if (response[0].error) {
