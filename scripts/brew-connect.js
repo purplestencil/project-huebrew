@@ -1,7 +1,7 @@
 /*jslint browser: true*/
 /*global $, jQuery, console, alert*/
 
-//huebrew object
+//huebrew object and variables
 var brew = {
     //new user created on connect
     user: "",
@@ -14,11 +14,14 @@ var brew = {
     device: "huebrew#test",
 
     //bridge IP address on start
-    bridgeIP: null
+    bridgeIP: null,
+    
+    //selected light 1 on start
+    lightId: 1
 };
 
-//Return the bridge address when the function is called
-brew.getHueBridgeIpAddress = function () {
+//return the bridge address when the function is called
+brew.getBridgeIp = function () {
     "use strict";
     return brew.bridgeIP || $("#ipAddress").val();
 };
@@ -31,13 +34,12 @@ brew.createUser = function (userName, successCheck, failCheck) {
         "username": userName,
         "devicetype": brew.device
     };
-
     //http call
     $.ajax({
         type: "POST",
         dataType: "json",
         timeout: 3000,
-        url: "http://" + brew.getHueBridgeIpAddress() + "/api/",
+        url: "http://" + brew.getBridgeIp() + "/api/",
         data: JSON.stringify(messageBody),
         success: function (data) {
             successCheck(data);
@@ -56,7 +58,7 @@ brew.bridgeConnect = function () {
     $("#status").text("Establishing connection...");
     brew.createUser(
         brew.user,
-        //check the response from the bridge
+        //successCheck function to check the response from the bridge
         function (response) {
             console.log(response[0]);
             if (response[0].error) {
@@ -88,24 +90,72 @@ document.getElementById("connectBridge").addEventListener("click", function () {
     brew.bridgeConnect();
 });
 
-brew.checkConnection = function (successCheck, failCheck) {
+brew.lightConnect = function () {
     "use strict";
+    brew.getLights (
+    function() {
+        //If lights are available, display the lights
+        $("#lights").html(response[0]);
+    },
+    function() {});
+};
+
+brew.getLights = function (successCheck, failCheck) {
+    "use strict";
+    //http call
     $.ajax({
         type: "GET",
         dataType: "json",
         url: "http://" +
-            brew.getHueBridgeIpAddress() + "/api/" +
-            brew.user + "/config",
-        success: successCheck,
+            brew.getBridgeIp() + "/api" +
+            brew.user + "/lights",
+        success: function (data) {
+            successCheck(data);
+        },
         error: function (a, err) {
             failCheck(err);
         }
     });
 };
 
-//Store the Hue Bridge IP and update the UI"s text field.
-brew.setHueBridgeIpAddress = function (ipAddress) {
+
+//select a light from a list
+brew.selectLight = function (lightId) {
     "use strict";
-    brew.bridgeIP = ipAddress;
-    $("#ipAddress").val(brew.bridgeIP);
+    brew.lightId = lightId;
+};
+
+//turn on selected light
+brew.lightOn = function () {
+    "use strict";
+    //call state change request function
+    brew.setLightState(brew.lightId, {
+        "on": true
+    });
+};
+
+//turn off selected light
+brew.lightOff = function () {
+    "use strict";
+    //call state change request function
+    brew.setLightState(brew.lightId, {
+        "on": false
+    });
+};
+
+//send request to bridge to change the light state
+brew.setLightState = function (lightId, state) {
+    "use strict";
+    //http call
+    $.ajax({
+        type: "PUT",
+        dataType: "json",
+        url: "http://" +
+            brew.getBridgeIp() + "/api" +
+            brew.user + "/lights" +
+            lightId + "/state",
+        data: JSON.stringify(state),
+        success: function (data) {},
+        error: function (a, err) {}
+    });
 };
