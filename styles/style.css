@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Roboto|Roboto+Mono');
 html,
 body {
-  color: red;
+  color: lightgray;
   height: 100%;
   background-color: -webkit-linear-gradient(left, grey, white 10%, grey, white, grey, white 90%, grey);
   padding-top: 28px;
@@ -64,7 +64,7 @@ body {
 }
 .hue-container {
   background: #181818;
-  color: red;
+  color: lightgray;
   padding-top: 2%;
   padding-bottom: 2%;
   padding-left: 10%;
@@ -78,5 +78,23 @@ body {
   text-align: center;
 }
 .form-text {
-  color: white;
+  color: lightgray;
+}
+.success-text {
+  color: forestgreen;
+}
+.fail-text {
+  color: indianred;
+}
+#status {
+  font-style: italic;
+}
+/*#light-btns {
+    column-count: 3;
+    column-fill: auto;
+    max-height: 450px;
+}*/
+.custom-btn {
+  float: right;
+  width: 150px !important;
 }

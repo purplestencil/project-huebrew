@@ -1,4 +1,4 @@
-/*jslint browser: true*/
+/*jslint browser: true, sloppy: true*/
 /*global $, jQuery , console, scrollBy*/
 
 //define variables
@@ -8,7 +8,6 @@ var selector, elems, makeActive, scrollToAnchor, headerOffset;
 selector = ".nav li";
 elems = document.querySelectorAll(selector);
 makeActive = function () {
-    "use strict";
     var i;
     for (i = 0; i < elems.length; i += 1) {
         elems[i].classList.remove("active");
@@ -22,10 +21,8 @@ for (i = 0; i < elems.length; i += 1) {
 
 
 //to adjust top offset for fixed navbar when jumping to anchor
-
 headerOffset = 56;
 scrollToAnchor = function () {
-    "use strict";
     scrollBy(0, -headerOffset);
 };
 if (location.hash) {

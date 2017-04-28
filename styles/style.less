@@ -15,8 +15,8 @@
 //body variables setup
 @bgbody: @monobow;
 @bgcontainer: #181818;
-@txtbody: red;
-@txtcontainer: red;
+@txtbody: @txtnav;
+@txtcontainer: @txtnav;
 @padtop: 28px;
 @padbottom: 28px;
 @spaceabove: 2%;
@@ -138,5 +138,28 @@ html, body {
 }
 
 .form-text {
-  color: white;
+  color: @txtnav;
+}
+
+.success-text {
+  color: forestgreen;
+}
+
+.fail-text {
+  color: indianred;
+}
+
+#status {
+    font-style: italic;
+}
+
+/*#light-btns {
+    column-count: 3;
+    column-fill: auto;
+    max-height: 450px;
+}*/
+
+.custom-btn {
+    float: right;
+    width: 150px !important;
 }
