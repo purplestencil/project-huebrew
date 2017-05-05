@@ -82,7 +82,7 @@ brew.bridgeConnect = function () {
                 $('#status').html('<p class="success-text">Connected!</p>');
                 console.log('Success: Connected to the bridge. \nNew username: ' + response[0].success.username);
                 brew.user = response[0].success.username;
-                brew.user = 'newdeveloper';
+                //brew.user = 'newdeveloper';
             } else {
                 $('#status').html('<p class="fail-text">Undefined error. Try again.</p>');
                 console.log('Undefined error: Connection attempt failed.');
