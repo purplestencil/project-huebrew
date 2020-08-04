@@ -1,6 +1,6 @@
-Project Huebrew is my final project for my graduate degree in computer science.
+Project Huebrew is the final project for my graduate degree in computer science.
 
-I am teaching myself JSON, JavaScript, HTML, CSS and how to work with an API as part of this project. 
+I am teaching myself JSON, JavaScript, HTML, CSS and how to work with a public API as part of this project. 
 The end goal is to create a basic web application to control Phillips hue lights.
 
 <body>
